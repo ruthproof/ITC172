@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ShowService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:11396/ShowService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:11396/ShowService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11396/ShowService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:11396/ShowService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IShowService_getArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtist" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_getArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_getVenues_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVenues" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_getVenues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVenuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_showsByVenues_InputMessage">
+    <wsdl:part name="parameters" element="tns:showsByVenues" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_showsByVenues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:showsByVenuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_getShowsByArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:getShowsByArtist" />
+  </wsdl:message>
+  <wsdl:message name="IShowService_getShowsByArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getShowsByArtistResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IShowService">
+    <wsdl:operation name="getArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/getArtist" message="tns:IShowService_getArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/getArtistResponse" message="tns:IShowService_getArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVenues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/getVenues" message="tns:IShowService_getVenues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/getVenuesResponse" message="tns:IShowService_getVenues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="showsByVenues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/showsByVenues" message="tns:IShowService_showsByVenues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/showsByVenuesResponse" message="tns:IShowService_showsByVenues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getShowsByArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowService/getShowsByArtist" message="tns:IShowService_getShowsByArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowService/getShowsByArtistResponse" message="tns:IShowService_getShowsByArtist_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IShowService" type="tns:IShowService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getArtist">
+      <soap:operation soapAction="http://tempuri.org/IShowService/getArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVenues">
+      <soap:operation soapAction="http://tempuri.org/IShowService/getVenues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showsByVenues">
+      <soap:operation soapAction="http://tempuri.org/IShowService/showsByVenues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getShowsByArtist">
+      <soap:operation soapAction="http://tempuri.org/IShowService/getShowsByArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShowService">
+    <wsdl:port name="BasicHttpBinding_IShowService" binding="tns:BasicHttpBinding_IShowService">
+      <soap:address location="http://localhost:11396/ShowService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
